@@ -1,0 +1,37 @@
+.student-form-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f4f6f9;
+}
+
+.student-form-card {
+  width: 100%;
+  max-width: 820px;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.student-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  padding-top: 1rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.address-field {
+  grid-column: 1 / -1; // Full width for address
+}
+
+.button-group {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}

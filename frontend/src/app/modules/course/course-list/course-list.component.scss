@@ -1,0 +1,36 @@
+.course-list-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f4f6f9;
+}
+
+.course-list-card {
+  width: 100%;
+  max-width: 1100px;
+  padding: 1rem 1.5rem 2rem 1.5rem;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+mat-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.mat-table-responsive {
+  width: 100%;
+  min-width: 600px;
+  font-size: 14px;
+}

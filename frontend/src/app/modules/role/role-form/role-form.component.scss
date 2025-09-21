@@ -1,0 +1,30 @@
+.role-form-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f4f6f9;
+}
+
+.role-form-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.role-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}

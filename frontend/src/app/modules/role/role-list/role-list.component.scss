@@ -1,0 +1,31 @@
+.role-list-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f4f6f9;
+}
+
+.role-list-card {
+  width: 100%;
+  max-width: 800px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.mat-table-responsive {
+  width: 100%;
+  min-width: 500px;
+  font-size: 14px;
+}

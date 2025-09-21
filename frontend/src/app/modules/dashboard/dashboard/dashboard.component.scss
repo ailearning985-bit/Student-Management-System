@@ -1,0 +1,22 @@
+.dashboard-wrapper {
+  padding: 2rem;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.dashboard-card {
+  padding: 1rem;
+  border-radius: 10px;
+  background: #fff;
+}
+
+mat-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
