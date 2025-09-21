@@ -1,0 +1,30 @@
+## .NET Core
+bin/
+obj/
+*.user
+*.dll
+*.pdb
+
+## VS Code
+.vscode/
+*.code-workspace
+
+## Angular
+node_modules/
+/dist
+/.angular
+/.angular/cache
+/tmp
+/out-tsc
+/bazel-out
+
+## Environment files
+.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+## System Files
+.DS_Store
+Thumbs.db
