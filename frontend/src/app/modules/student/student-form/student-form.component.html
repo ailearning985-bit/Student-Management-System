@@ -23,8 +23,10 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Date of Birth</mat-label>
-          <input matInput formControlName="dateOfBirth" type="date" required>
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="address-field" floatLabel="always">
