@@ -34,3 +34,14 @@ mat-card-title {
   min-width: 600px;
   font-size: 14px;
 }
+
+.status-active {
+  color: green;
+  font-weight: 600;
+}
+
+.status-inactive {
+  color: red;
+  font-weight: 600;
+}
+

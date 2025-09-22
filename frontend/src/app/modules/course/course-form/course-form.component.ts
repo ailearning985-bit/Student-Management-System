@@ -13,34 +13,61 @@ export class CourseFormComponent implements OnInit {
   courseForm!: FormGroup;
   id: number | null = null;
 
-  constructor(private fb: FormBuilder, private courseService: CourseService,
-              private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private courseService: CourseService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.courseForm = this.fb.group({
       courseName: ['', Validators.required],
-      description: [''],
+      courseFee: ['', Validators.required],
       durationInMonths: ['', Validators.required],
-      fees: ['', Validators.required],
-      status: ['Active']
+      description: [''],
+      status: ['Active', Validators.required]
     });
 
     this.id = Number(this.route.snapshot.paramMap.get('id'));
-    if (this.id) this.loadCourse();
+    if (this.id) {
+      this.loadCourse();
+    }
   }
 
   loadCourse() {
-    this.courseService.getById(this.id!).subscribe(course => {
-      this.courseForm.patchValue(course);
+  this.courseService.getById(this.id!).subscribe(course => {
+    this.courseForm.patchValue({
+      courseName: course.courseName,
+      courseFee: course.fees ?? course.courseFee,   // map backend field to form
+      durationInMonths: course.durationInMonths,
+      description: course.description,
+      status: course.status
     });
-  }
+  });
+}
 
   save() {
-    if (this.courseForm.invalid) return;
-    if (this.id) {
-      this.courseService.update(this.id, this.courseForm.value).subscribe(() => this.router.navigate(['/courses']));
-    } else {
-      this.courseService.add(this.courseForm.value).subscribe(() => this.router.navigate(['/courses']));
-    }
+  if (this.courseForm.invalid) return;
+
+  const formValue = this.courseForm.value;
+
+  // map to backend model
+  const payload = {
+    id: this.id,
+    courseName: formValue.courseName,
+    fees: formValue.courseFee,   // map to backend field
+    durationInMonths: formValue.durationInMonths,
+    description: formValue.description,
+    status: formValue.status
+  };
+
+  if (this.id) {
+    this.courseService.update(this.id, payload)
+      .subscribe(() => this.router.navigate(['/courses']));
+  } else {
+    this.courseService.add(payload)
+      .subscribe(() => this.router.navigate(['/courses']));
   }
+}
 }
